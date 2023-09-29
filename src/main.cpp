@@ -1,4 +1,4 @@
-/* coded by millennium42 15:50 09/27/23 */
+/* coded by millennium42 21:04 09/28/23 */
 
 // SENSORES DISPOSTOS DA SEGUINTE FORMA
 //
@@ -16,14 +16,24 @@
 
 #include<SoftwareSerial.h>
 
-#define LIMITE 700 
-#define velNormal  120
-#define Kp 50
-
 #define velNoventaED 900;
 #define velNoventaDD 100;
 #define velNoventaEE 100;
 #define velNoventaDE 900;
+
+#define DirecaoUm 16;
+#define DirecaoDois 10;
+#define PWMDireita 2;
+
+#define DirecaoTres 17;
+#define DirecaoQuatro 18;
+#define PWMEsquerda 19;
+
+#define LIMITE 700;
+#define velNormal 120;
+#define Kp 50;
+
+
 
 int sensoresDigital[8];
 int sensoresAnalog[8];
@@ -45,6 +55,23 @@ sensorPin[4] = 33;  sensorPin[5] = 32;  sensorPin[6] = 35;  sensorPin[7] = 34;
 for(int i = 0; i++; i<8){
   pinMode(sensorPin[i], INPUT);
   }
+
+// Ativa o modo de OUTPUT nos pinos dos motores
+pinMode(DirecaoUm, OUTPUT);
+pinMode(DirecaoDois, OUTPUT);
+pinMode(PWMDireita, OUTPUT);
+
+pinMode(DirecaoTres, OUTPUT);
+pinMode(DirecaoQuatro, OUTPUT);
+pinMode(PWMEsquerda, OUTPUT);
+
+digitalWrite(DirecaoUm, LOW);
+digitalWrite(DirecaoDois, LOW);
+
+digitalWrite(DirecaoTres, LOW);
+digitalWrite(DirecaoQuatro, LOW);
+
+
 
 }
 
@@ -108,3 +135,17 @@ void velocidadeMotor(){
   motores[1] = velNormal - (Kp * erro(sensoresDigital)) ;
   }
 }
+<<<<<<< HEAD
+
+
+void loop(){
+  readSensor();
+  velocidadeMotor();
+
+  analogWrite(PWMEsquerda, motores[0]);
+
+  analogWrite(PWMDireita, motores[1]);
+
+}
+=======
+>>>>>>> b678e6fdec7539c5cf1784b451024e57f670164c
