@@ -1,4 +1,4 @@
-/* coded by millennium42 21:04 09/28/23 */
+/* coded by millennium42 13:46 09/18/23 */
 
 // SENSORES DISPOSTOS DA SEGUINTE FORMA
 //
@@ -21,17 +21,17 @@
 #define velNoventaEE 100;
 #define velNoventaDE 900;
 
-#define DirecaoUm 16;
-#define DirecaoDois 10;
-#define PWMDireita 2;
+int DirecaoUm = 16;
+int DirecaoDois = 10;
+int PWMDireita = 2;
 
-#define DirecaoTres 17;
-#define DirecaoQuatro 18;
-#define PWMEsquerda 19;
+int DirecaoTres = 17;
+int DirecaoQuatro = 18;
+int PWMEsquerda = 19;
 
-#define LIMITE 700;
-#define velNormal 120;
-#define Kp 50;
+int LIMITE = 700;
+int velNormal = 120;
+int Kp = 50;
 
 
 
@@ -135,7 +135,6 @@ void velocidadeMotor(){
   motores[1] = velNormal - (Kp * erro(sensoresDigital)) ;
   }
 }
-<<<<<<< HEAD
 
 
 void loop(){
@@ -147,5 +146,3 @@ void loop(){
   analogWrite(PWMDireita, motores[1]);
 
 }
-=======
->>>>>>> b678e6fdec7539c5cf1784b451024e57f670164c
