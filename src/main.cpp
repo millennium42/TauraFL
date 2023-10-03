@@ -1,4 +1,4 @@
-/* coded by millennium42 13:46 09/18/23 */
+/* coded by millennium42 12:37 10/03/23 */
 
 // SENSORES DISPOSTOS DA SEGUINTE FORMA
 //
@@ -103,14 +103,14 @@ int erro(int S[]){
 
   // Para percurso simples, sem gape nem curva 90 graus.
 
-  if( S[2] == 1  && S[3] == 1 ) return -1;
-  if( S[4] == 1  && S[5] == 1 ) return +1;
+  if( S[2] == 0  && S[3] == 0 ) return -1;
+  if( S[4] == 0  && S[5] == 0 ) return +1;
 
-  if( S[1] == 1  && S[2] == 1 ) return -2;
-  if( S[5] == 1  && S[6] == 1 ) return +2;
+  if( S[1] == 0  && S[2] == 0 ) return -2;
+  if( S[5] == 0  && S[6] == 0 ) return +2;
     
-  if( S[0] == 1  && S[1] == 1 ) return -3;
-  if( S[6] == 1  && S[7] == 1 ) return +3;
+  if( S[0] == 0  && S[1] == 0 ) return -3;
+  if( S[6] == 0  && S[7] == 0 ) return +3;
   
   // Para o Gape
   
