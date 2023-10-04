@@ -1,4 +1,4 @@
-/* coded by millennium42 12:37 10/03/23 */
+/* coded by millennium42 15:55 10/04/23 */
 
 // SENSORES DISPOSTOS DA SEGUINTE FORMA
 //
@@ -30,7 +30,9 @@ int DirecaoQuatro = 18;
 int PWMEsquerda = 19;
 
 int LIMITE = 700;
-int velNormal = 120;
+int velNormal[2];
+int velNormal[0] = 150;
+int velNormal[1] = 150;
 int Kp = 50;
 
 
@@ -131,8 +133,8 @@ void velocidadeMotor(){
     motores[1] = velNoventaDE ;
   }
   else {
-  motores[0] = velNormal + (Kp * erro(sensoresDigital)) ;
-  motores[1] = velNormal - (Kp * erro(sensoresDigital)) ;
+  motores[0] = velNormal[0] + (Kp * erro(sensoresDigital)) ;
+  motores[1] = velNormal[1] - (Kp * erro(sensoresDigital)) ;
   }
 }
 
