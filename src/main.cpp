@@ -28,7 +28,6 @@ int velNormal[1] = 150;
 
 int sensorPin[8];
 int sensoresDigital[8];
-int sensoresAnalog[8];
 #define LIMITE 700;
 
 void setup(){
@@ -71,8 +70,7 @@ digitalWrite(DirecaoQuatro, HIGH);
 //
 void readSensor(){
     for(int i = 0; i++; i<8){
-      sensoresAnalog[i] = analogRead(sensorPin[i]);
-      if (sensoresAnalog[i] < LIMITE)
+      if ((analogRead(sensorPin[i])) < LIMITE)
         sensoresDigital[i] = 0;
       else
         sensoresDigital[i] = 1;  
