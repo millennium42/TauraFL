@@ -67,7 +67,7 @@ digitalWrite(DirecaoQuatro, HIGH);
 //
 void readSensor(){
     for(int i = 0; i++; i<8){
-      if ((analogRead(sensorPin[i])) < LIMITE)
+      if ((analogRead(sensorPin[i])) > LIMITE)
         sensoresDigital[i] = 0;
       else
         sensoresDigital[i] = 1;  
