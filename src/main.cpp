@@ -55,8 +55,8 @@ pinMode(PWMEsquerda, OUTPUT);
 digitalWrite(DirecaoUm, HIGH);
 digitalWrite(DirecaoDois, LOW);
 
-digitalWrite(DirecaoTres, HIGH);
-digitalWrite(DirecaoQuatro, LOW);
+digitalWrite(DirecaoTres, LOW);
+digitalWrite(DirecaoQuatro, HIGH);
 
 }
 
