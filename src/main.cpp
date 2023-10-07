@@ -24,14 +24,12 @@ int motores [2];
 int velNormal [2] = {100, 100};
 #define Kp 50
 
-int sensorPin [8];
+// Define cada pino relacionado a cada sensor no vetor
+int sensorPin [8] = {13,12,14,27,26,25,33,32};
 int sensoresDigital[8];
 #define LIMITE 600
 
 void setup(){
-// Define cada pino relacionado a cada sensor no vetor
-sensorPin[0] = 13;  sensorPin[1] = 12;  sensorPin[2] = 14;  sensorPin[3] = 27; 
-sensorPin[4] = 26;  sensorPin[5] = 25;  sensorPin[6] = 33;  sensorPin[7] = 32;
 
 // Ativa o modo de INPUT nos pinos dos sensores
 for(int i = 0; i++; i<8){
@@ -54,11 +52,11 @@ pinMode(PWMEsquerda, OUTPUT);
 // [  1    0 ]  gira em outro sentido 
 // [  1    1 ]  freia o motor
   
-digitalWrite(DirecaoUm, LOW);
-digitalWrite(DirecaoDois, HIGH);
+digitalWrite(DirecaoUm, HIGH);
+digitalWrite(DirecaoDois, LOW);
 
-digitalWrite(DirecaoTres, LOW);
-digitalWrite(DirecaoQuatro, HIGH);
+digitalWrite(DirecaoTres, HIGH);
+digitalWrite(DirecaoQuatro, LOW);
 
 }
 
