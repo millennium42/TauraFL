@@ -12,26 +12,23 @@
 
 #include<SoftwareSerial.h>
 
-#define DirecaoUm 23;
-#define DirecaoDois 22;
-#define PWMDireita 21;
+#define DirecaoUm 23
+#define DirecaoDois 22
+#define PWMDireita 21
 
-#define DirecaoTres 19;
-#define DirecaoQuatro 18;
-#define PWMEsquerda 5;
+#define DirecaoTres 19
+#define DirecaoQuatro 18
+#define PWMEsquerda 5
 
-int motores[2];
-int velNormal[2];
-int velNormal[0] = 150;
-int velNormal[1] = 150;
-#define Kp 50;
+int motores [2];
+int velNormal [2] = {100, 100};
+#define Kp 50
 
-int sensorPin[8];
+int sensorPin [8];
 int sensoresDigital[8];
-#define LIMITE 700;
+#define LIMITE 600
 
 void setup(){
-  
 // Define cada pino relacionado a cada sensor no vetor
 sensorPin[0] = 13;  sensorPin[1] = 12;  sensorPin[2] = 14;  sensorPin[3] = 27; 
 sensorPin[4] = 26;  sensorPin[5] = 25;  sensorPin[6] = 33;  sensorPin[7] = 32;
@@ -106,8 +103,22 @@ void velocidadeMotor(){
 }
 
 void loop(){
+  digitalWrite(DirecaoUm, LOW);
+  digitalWrite(DirecaoDois, HIGH);
+
+  digitalWrite(DirecaoTres, LOW);
+  digitalWrite(DirecaoQuatro, HIGH);
+
+  for (int x = 0; x < 255; x++){
+    Serial.println(x);
+    analogWrite(PWMEsquerda, x);
+    analogWrite(PWMDireita, x);
+  }
+
+  /*
   readSensor();
   velocidadeMotor();
   analogWrite(PWMEsquerda, motores[0]);
   analogWrite(PWMDireita, motores[1]);
+  */
 }
