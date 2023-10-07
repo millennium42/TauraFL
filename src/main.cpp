@@ -1,4 +1,3 @@
-/* coded by millennium42 19:45 10/06/2023 */
 
 // SENSORES DISPOSTOS DA SEGUINTE FORMA
 //
@@ -101,22 +100,10 @@ void velocidadeMotor(){
 }
 
 void loop(){
-  digitalWrite(DirecaoUm, LOW);
-  digitalWrite(DirecaoDois, HIGH);
-
-  digitalWrite(DirecaoTres, LOW);
-  digitalWrite(DirecaoQuatro, HIGH);
-
-  for (int x = 0; x < 255; x++){
-    Serial.println(x);
-    analogWrite(PWMEsquerda, x);
-    analogWrite(PWMDireita, x);
-  }
-
-  /*
+  
   readSensor();
   velocidadeMotor();
   analogWrite(PWMEsquerda, motores[0]);
   analogWrite(PWMDireita, motores[1]);
-  */
+
 }
