@@ -12,13 +12,13 @@
 
 #include<SoftwareSerial.h>
 
-#define DirecaoUm 16;
-#define DirecaoDois 10;
-#define PWMDireita 2;
+#define DirecaoUm 23;
+#define DirecaoDois 22;
+#define PWMDireita 21;
 
-#define DirecaoTres 17;
+#define DirecaoTres 19;
 #define DirecaoQuatro 18;
-#define PWMEsquerda 19;
+#define PWMEsquerda 5;
 
 int motores[2];
 int velNormal[2];
@@ -33,8 +33,8 @@ int sensoresDigital[8];
 void setup(){
   
 // Define cada pino relacionado a cada sensor no vetor
-sensorPin[0] = 14;  sensorPin[1] = 27;  sensorPin[2] = 26;  sensorPin[3] = 25; 
-sensorPin[4] = 33;  sensorPin[5] = 32;  sensorPin[6] = 35;  sensorPin[7] = 34;
+sensorPin[0] = 13;  sensorPin[1] = 12;  sensorPin[2] = 14;  sensorPin[3] = 27; 
+sensorPin[4] = 26;  sensorPin[5] = 25;  sensorPin[6] = 33;  sensorPin[7] = 32;
 
 // Ativa o modo de INPUT nos pinos dos sensores
 for(int i = 0; i++; i<8){
